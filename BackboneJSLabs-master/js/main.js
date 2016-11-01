@@ -35,7 +35,7 @@ var personView = new PersonView({model: person});
 
 
 
-//седьмой урок
+//////////////////СЕДЬМОЙ УРОК//////////////////
 //var Person = function(config){
 //    this.name = config.name;
 //    this.age = config.age;
@@ -53,7 +53,8 @@ var Person = Backbone.Model.extend({
         name: 'Evgeniy',
         age: 19,
         job: 'president',
-        
+        hobbies: 'php',
+		words: 'Hello world'
     }
 });
 
@@ -62,7 +63,7 @@ var PersonView = Backbone.View.extend({
 	
 	
 
-template: _.template('<strong><%= name%></strong> (<% age %>) - <%= job %> '),
+template: _.template('Меня зовут <%= name %> ,мне  <%= age %> лет, я работаю <%=  job %>, моё хобби <%= hobbies %>, я сказал <%= words %>'),
 
 initialize: function(){
 	this.render();

@@ -1,3 +1,4 @@
+//ШЕСТОЙ УРОК
 //var Person = function(config){
 //    this.name = config.name;
 //    this.age = config.age;

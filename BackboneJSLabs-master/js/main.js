@@ -10,7 +10,7 @@
 //
 //var nick = new Person({name: 'Nick', age:'24',job:'Front-end-developer'});
 
-var Person = Backbone.Model.extend({
+/*var Person = Backbone.Model.extend({
     defaults: {
         name: 'Evgeniy',
         age: 19,
@@ -26,6 +26,54 @@ var PersonView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.model.get('words'));
     }
+});
+
+var person = new Person;
+var personView = new PersonView({model: person});
+*/
+
+
+
+//седьмой урок
+//var Person = function(config){
+//    this.name = config.name;
+//    this.age = config.age;
+//    this.job = config.job;
+//};
+//
+//Person.prototype.walk = function(){
+//  return this.name + ' is walking';
+//};
+//
+//var nick = new Person({name: 'Nick', age:'24',job:'Front-end-developer'});
+
+var Person = Backbone.Model.extend({
+    defaults: {
+        name: 'Evgeniy',
+        age: 19,
+        job: 'president',
+        
+    }
+});
+
+var PersonView = Backbone.View.extend({
+    tagName: 'li', 
+	
+	
+
+template: _.template('<strong><%= name%></strong> (<% age %>) - <%= job %> '),
+
+initialize: function(){
+	this.render();
+},
+
+
+    render: function () {
+		
+        this.$el.html(this.template(this.model.toJSON() ) );
+          
+	}
+	
 });
 
 var person = new Person;
